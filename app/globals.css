@@ -2,26 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+/* global.css */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* Base Layer */
+
+@layer base {
+  /* Text box placeholder styles */
+  .text-box::placeholder {
+    @apply text-gold-800;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Components Layer */
+
+@layer components {
+  /* Navbar styles */
+  .navbar {
+    @apply font-playfairDisplay sticky top-0 bg-purple-700 text-white font-bold text-xl flex justify-center items-center py-4;
+  }
+
+  /* Heading styles */
+  .heading {
+    @apply text-white text-3xl font-medium;
+  }
+
+  /* Text box styles */
+  .text-box {
+    @apply bg-gold-500 text-gold-800 rounded-3xl;
+  }
+
+  /* Send button styles */
+  .send-button {
+    @apply bg-white w-14 h-14 rounded-full;
+  }
+
+  .send-button .arrow {
+    @apply text-gold-800;
+  }
+
+  /* Post header styles */
+  .post-header {
+    @apply text-white text-2xl font-bold;
+  }
+
+  /* Post box styles */
+  .post {
+    @apply bg-purple-500 text-white text-base rounded-xl flex flex-col items-start justify-between font-semibold py-9 px-8 w-[370px] gap-12;
+  }
+
+  /* Mini text styles */
+  .card-menu {
+    @apply text-white text-sm font-medium;
+  }
+}
+
+/* Utilities Layer */
+
+@layer utilities {
+  /* Rounded corners utility class */
+  .rounded {
+    @apply rounded-lg;
+  }
 }
