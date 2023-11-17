@@ -6,7 +6,7 @@ const PostList = ({data}) => {
         return new Date(b.postTime) - new Date(a.postTime);
     });
     return(
-        <div className='py-8 flex flex-wrap gap-12 w-[65%]'>
+        <div className='flex flex-wrap w-full gap-6 justify-center'>
                 {sortedPosts.map((post) => (
                     <PostCard 
                     key={post._id}
@@ -20,9 +20,8 @@ const PostList = ({data}) => {
 const Feed = ({ posts }) => {   
     return (
         <>
-            <div className='flex post-header text-bold py-4'>
-                <p>People are thinking...</p>
-            </div>
+            <p className='title'>People are thinking...</p>
+
             <PostList
                 data={posts}
             />

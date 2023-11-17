@@ -16,9 +16,19 @@
 /* Components Layer */
 
 @layer components {
-  /* Navbar styles */
-  .navbar {
-    @apply font-playfairDisplay sticky top-0 bg-purple-700 text-white font-bold text-xl flex justify-center items-center py-4;
+
+  .title {
+    @apply font-semibold text-[25.9px] leading-[30px] text-center text-white;
+    /* Inside auto layout */
+    @apply flex-none flex-grow-0;
+  }
+
+  .gradient-purple-to-dark {
+    background: linear-gradient(180deg, #4B0082 0%, #170226 100%);
+  }
+
+  .global-paddings{
+    @apply px-6 md:px-44 sm:px-20
   }
 
   /* Heading styles */
@@ -28,7 +38,7 @@
 
   /* Text box styles */
   .text-box {
-    @apply bg-gold-500 text-gold-800 rounded-3xl;
+    @apply bg-gold-500 text-gold-800 rounded-3xl px-4 py-6 relative focus:outline-none resize-none w-full min-h-[200px] h-fit max-w-[1200px];
   }
 
   /* Send button styles */
@@ -53,14 +63,5 @@
   /* Mini text styles */
   .card-menu {
     @apply text-white text-sm font-medium;
-  }
-}
-
-/* Utilities Layer */
-
-@layer utilities {
-  /* Rounded corners utility class */
-  .rounded {
-    @apply rounded-lg;
   }
 }

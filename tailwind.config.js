@@ -6,7 +6,17 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      'sm': '431px',
+
+      'md': '821px',
+
+      'desktop': '1200px',
+    },
     extend: {
+      borderRadius: {
+        '3xl': '20px',
+      },
       colors: {
         
         "purple-500": "#7D38B3",

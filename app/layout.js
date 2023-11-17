@@ -1,9 +1,9 @@
-import { Playfair_Display, Raleway } from 'next/font/google'
+import { Raleway } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 
-const playfair_display = Playfair_Display({ subsets: ['latin'], weight: ['700'] })
 const raleway = Raleway({ subsets: ['latin'], weight: ['500','600','700'] })
+
 
 export const metadata = {
   title: 'VanishVox',
@@ -13,8 +13,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${raleway.className} bg-purple-700`}>
-        <main>
+      <body className={`${raleway.className}  h-fit `}>
+        <main className='flex flex-col gap-12 w-full gradient-purple-to-dark min-h-screen h-full'>
           <Navbar />
           {children}
         </main>

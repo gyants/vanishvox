@@ -58,9 +58,11 @@ const page = () => {
 
   return (
     <>
-    <section className='py-16 flex flex-col items-center justify-center'>
-      <div className='flex heading'>
-        <p>Say what you want. It disappears after an hour.</p>
+    <section className='global-paddings flex flex-col gap-6 items-center'>
+      <div className='title'>
+        <p>Say what you want. 
+          <br className='sm:hidden'/>
+          It disappears after an hour.</p>
       </div>
       <Postbox 
         post={post}
@@ -70,7 +72,7 @@ const page = () => {
       />      
     </section>
 
-    <section className='flex flex-col items-center'>
+    <section className='flex flex-col gap-12 items-center mt-12 global-paddings'>
     <Feed 
       posts={posts}
     />
