@@ -1,6 +1,6 @@
 "use client"
 
-const Postbox = ({post, setPost, submitting, handleSubmit, type}) => {
+const Postbox = ({post, setPost, submitting, handleSubmit, type, maxCharLimit}) => {
     
     return (
         <form
@@ -9,11 +9,15 @@ const Postbox = ({post, setPost, submitting, handleSubmit, type}) => {
             >
             <textarea
                 value={post.message}
-                className={type == 'post' ? `text-box min-h-[200px] w-full h-40 rounded-3xl bg-gold-500 text-gold-800`: `max-w-full text-box w-full rounded-3xl bg-gold-500 text-gold-800 `}
+                className={type == 'post' ? `text-box min-h-[200px] w-full rounded-3xl bg-gold-500 text-gold-800 custom-scrollbar`: `max-w-full text-box w-full rounded-3xl bg-gold-500 text-gold-800 `}
                 placeholder={type == 'post' ? `What's on your mind..?` : `Write a reply...`}
                 onChange={(e) => setPost({...post, message: e.target.value}) }
                 required // Add this if the field is required
             ></textarea>
+            <div 
+                className={`${(post.message.length > maxCharLimit) ? `text-red-600` : `text-gold-800` } mt-1 absolute left-4 bottom-4 text-sm`}>
+                {post.message.length}/{maxCharLimit} character
+            </div>
             <button
                 type="submit" // Specify the button type as "submit" to trigger the form submission
                 disabled={submitting}

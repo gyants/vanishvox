@@ -3,6 +3,20 @@
 @tailwind utilities;
 
 /* global.css */
+/* width */
+::-webkit-scrollbar {
+  @apply w-2
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-purple-500 rounded-full
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-purple-900 rounded-full border-purple-50 border-2 
+}
 
 /* Base Layer */
 
@@ -44,6 +58,7 @@
   .comment-box {
     @apply h-fit
   }
+  
 
   /* Send button styles */
   .send-button {

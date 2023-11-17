@@ -22,6 +22,7 @@ const RepliesList = ({data}) => {
 }
 
 const Post = () => {
+    const maxCharLimit = 400
     // The Post and replies
     const [post, setPost] = useState(null);
     const {id} = useParams();
@@ -53,7 +54,12 @@ const Post = () => {
   const createReply = async (e) => {
     e.preventDefault()
     setSubmitting(true)
-
+    if(reply.message.length > maxCharLimit) { 
+        alert('Message is too long')
+        setSubmitting(false);
+        return
+        
+      }
     try {
     // Adjust the API endpoint to target the specific post's reply addition
     const response = await fetch(`/api/posts/${id}/reply`, {
@@ -134,6 +140,7 @@ const Post = () => {
                 setPost={setReply}
                 submitting={submitting}
                 handleSubmit={createReply}
+                maxCharLimit={maxCharLimit}
             />
             <div className='mt-6 w-full flex flex-col gap-3 items-start'>
                 <h3 className='title text-xl'>Replies</h3>

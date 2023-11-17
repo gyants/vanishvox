@@ -11,6 +11,7 @@ const page = () => {
   const [post, setPost] = useState({ 
     message: '',
   })
+  const maxCharLimit = 400
 
   // Feed states
   const [posts, setPosts] = useState([])
@@ -31,7 +32,13 @@ const page = () => {
     e.preventDefault()
     setSubmitting(true)
 
+    if(post.message.length > maxCharLimit) { 
+      alert('Message is too long')
+      return
+    }
+
     try {
+      
       const response = await fetch('/api/posts/new',
       {
         method: 'POST',
@@ -69,6 +76,7 @@ const page = () => {
         setPost={setPost}
         submitting={submitting}
         handleSubmit={createPost}
+        maxCharLimit={maxCharLimit}
         type={'post'}
       />   
     </section>
