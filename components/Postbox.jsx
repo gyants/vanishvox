@@ -1,15 +1,16 @@
 "use client"
 
-const Postbox = ({post, setPost, submitting, handleSubmit}) => {
+const Postbox = ({post, setPost, submitting, handleSubmit, type}) => {
+    
     return (
         <form
-            className="w-full max-w-[800px] relative"
+            className={type == 'post' ? `w-full max-w-[800px] relative` : `w-full relative`}
             onSubmit={handleSubmit}
             >
             <textarea
                 value={post.message}
-                className="text-box w-full h-40 rounded-3xl bg-gold-500 text-gold-800 "
-                placeholder="What's on your mind..?"
+                className={type == 'post' ? `text-box min-h-[200px] w-full h-40 rounded-3xl bg-gold-500 text-gold-800`: `max-w-full text-box w-full rounded-3xl bg-gold-500 text-gold-800 `}
+                placeholder={type == 'post' ? `What's on your mind..?` : `Write a reply...`}
                 onChange={(e) => setPost({...post, message: e.target.value}) }
                 required // Add this if the field is required
             ></textarea>

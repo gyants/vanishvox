@@ -20,7 +20,7 @@ const PostList = ({data}) => {
 const Feed = ({ posts }) => {   
     return (
         <>
-            <p className='title'>People are thinking...</p>
+            <h2 className='title'>People are thinking...</h2>
 
             <PostList
                 data={posts}

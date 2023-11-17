@@ -60,16 +60,17 @@ const page = () => {
     <>
     <section className='global-paddings flex flex-col gap-6 items-center'>
       <div className='title'>
-        <p>Say what you want. 
+        <h1>Say what you want. 
           <br className='sm:hidden'/>
-          It disappears after an hour.</p>
+          It disappears after an hour.</h1>
       </div>
       <Postbox 
         post={post}
         setPost={setPost}
         submitting={submitting}
         handleSubmit={createPost}
-      />      
+        type={'post'}
+      />   
     </section>
 
     <section className='flex flex-col gap-12 items-center mt-12 global-paddings'>

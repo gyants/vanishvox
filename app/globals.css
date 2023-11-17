@@ -38,7 +38,11 @@
 
   /* Text box styles */
   .text-box {
-    @apply bg-gold-500 text-gold-800 rounded-3xl px-4 py-6 relative focus:outline-none resize-none w-full min-h-[200px] h-fit max-w-[1200px];
+    @apply bg-gold-500 text-gold-800 rounded-3xl px-4 py-6 relative focus:outline-none resize-none w-full h-fit max-w-[1200px];
+  }
+
+  .comment-box {
+    @apply h-fit
   }
 
   /* Send button styles */
@@ -50,14 +54,10 @@
     @apply text-gold-800;
   }
 
-  /* Post header styles */
-  .post-header {
-    @apply text-white text-2xl font-bold;
-  }
 
   /* Post box styles */
   .post {
-    @apply bg-purple-500 text-white text-base rounded-xl flex flex-col items-start justify-between font-semibold py-9 px-8 w-[370px] gap-12;
+    @apply bg-purple-500 rounded-[20px] px-7 py-5 min-h-[203px] w-full text-white flex flex-col justify-between;
   }
 
   /* Mini text styles */
