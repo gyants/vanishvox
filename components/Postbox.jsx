@@ -4,7 +4,7 @@ const Postbox = ({post, setPost, submitting, handleSubmit, type, maxCharLimit}) 
     
     return (
         <form
-            className={type == 'post' ? `w-full max-w-[800px] relative` : `w-full relative`}
+            className={type == 'post' ? `w-full max-w-[800px] relative` : `w-full max-w-[840px] relative`}
             onSubmit={handleSubmit}
             >
             <textarea

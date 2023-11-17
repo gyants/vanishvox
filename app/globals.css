@@ -59,6 +59,9 @@
     @apply h-fit
   }
   
+  .max-33 {
+    max-height: 33%
+  }
 
   /* Send button styles */
   .send-button {

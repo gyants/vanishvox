@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import { redirect, useParams } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import Cardmenu from '@/components/Cardmenu';
 import { calculateTimeRemaining } from "@/lib/utils";
 import Postbox from '@/components/Postbox';
@@ -44,7 +44,7 @@ const Post = () => {
         const data = await response.json()
     
         setReplies(data)
-      }
+    }
     
     useEffect(() => {
     fetchReplies()
